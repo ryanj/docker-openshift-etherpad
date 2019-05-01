@@ -13,14 +13,15 @@ parameters:
   value: etherpad
 - name: ADMIN_PASSWORD
   description: Admin password for etherpad/admin
+  value: etherpad
   required: true
 - name: DB_DBID
+  value: etherpad
   description: Database Name
-  value: ether
   required: true
 - name: DB_HOST
   description: Database host
-  value: mycluster
+  value: localhost
   required: true
 - name: DB_USER
   description: Database User ID
