@@ -5,7 +5,7 @@ metadata:
   annotations:
     "openshift.io/display-name": Etherpad
     description: |
-      A shared Notepad for an OpenShift Cluster.
+      A realtime collaborative editor
 parameters:
 - name: NAME
   description: Name of the DC, service, route
@@ -20,26 +20,25 @@ parameters:
   required: true
 - name: DB_HOST
   description: Database host
-  value: mysql
+  value: mycluster
   required: true
 - name: DB_USER
   description: Database User ID
-  value: ether
+  value: etherpad
   required: true
 - name: DB_PASS
   description: Database Password
-  value: ether
+  value: etherpad
   required: true
 - name: DB_PORT
   description: Database Port
-  value: "3306"
+  value: "5432"
   required: true
 - name: ETHERPAD_IMAGE
   description: Etherpad Image to be used
   value: "quay.io/wkulhanek/etherpad:latest"
   required: true
 objects:
-
 - apiVersion: v1
   kind: DeploymentConfig
   metadata:
