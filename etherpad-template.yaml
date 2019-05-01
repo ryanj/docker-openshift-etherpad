@@ -27,6 +27,10 @@ parameters:
   description: Database User ID
   value: etherpad
   required: true
+- name: DB_TYPE
+  description: Database Password
+  value: postgres
+  required: true
 - name: DB_PASS
   description: Database Password
   value: etherpad
@@ -77,6 +81,8 @@ objects:
             value: ${DB_PASS}
           - name: DB_PORT
             value: ${DB_PORT}
+          - name: DB_TYPE
+            value: ${DB_TYPE}
           - name: DB_USER
             value: ${DB_USER}
           - name: NODE_ENV
@@ -211,13 +217,13 @@ objects:
                         },
         */
 
-         "dbType" : "mysql",
+         "dbType" : "${DB_TYPE}",
          "dbSettings" : {
-                          "user"    : "DB_USER",
-                          "host"    : "DB_HOST",
-                          "port"    : "DB_PORT",
-                          "password": "DB_PASS",
-                          "database": "DB_DBID"
+                          "user"    : "${DB_USER}",
+                          "host"    : "${DB_HOST}",
+                          "port"    : "${DB_PORT}",
+                          "password": "${DB_PASS}",
+                          "database": "${DB_DBID}"
                         },
 
         //the default text of a pad
